@@ -1,32 +1,35 @@
-let userInput = prompt("Please select Rock, Paper, or Scissors");
+const userChoice = prompt("Please select Rock, Paper, Scissors");
 
-function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random() * 3);
-    const computerInput = ["rock", "scissors", "paper"];
-
-    return computerInput[[randomNumber]];
+function getComputerChoice() {  
+    const randomChoice = ['rock', 'paper', 'scissors'];
+    let randomNumber = Math.floor(Math.random() * randomChoice.length);
+    return randomChoice[randomNumber];
 }
 
 function playRound(playerSelection, computerSelection) {
-    let playerChoice = playerSelection.toLowerCase();
-
-    if (playerChoice == 'paper' && computerSelection === "rock") {
-        console.log("You Win! Paper beats Rock");
-    } else if (playerChoice == 'scissors' && computerSelection == "paper") {
-        console.log("You Win! Scissors beats Paper");
-    } else if (playerChoice == 'rock' && computerSelection == "scissors") {
-        console.log("You Win! Rock beats Scissors");
-    } else if (playerChoice == 'scissors' && computerSelection == "rock") {
-        console.log("You Lose! Rock Beats Scissors");
-    } else if (playerChoice == 'rock' && computerSelection == "paper") {
-        console.log("You Lose! Paper beats Rock");
-    } else if (playerChoice == 'paper' && computerSelection == "scissors") {
-        console.log("You Lose! Scissors beats Paper");
+    let player = playerSelection.toLowerCase();
+    let computer = computerSelection.toLowerCase();
+    
+    if (player === computer) {
+        return `You Tie! ${player} equals ${computer}`;
+    } else if (player === 'rock' && computer === 'scissors') {
+        return `You Win! ${player} beats ${computer}`;
+    } else if (player === 'scissors' && computer === 'paper') {
+        return `You Win! ${player} beats ${computer}`;
+    } else if (player === 'paper' && computer === 'rock') {
+        return `You Win! ${player} beats ${computer}`;
     } else {
-        console.log("You Tied!");
+        return `You Lose! ${computer} beats ${player}`;
     }
 }
 
-let computerSelection = getComputerChoice();
+function playGame() {
+    let result = getComputerChoice();
+    console.log(playRound(userChoice, result));
+    console.log(playRound(userChoice, result));
+    console.log(playRound(userChoice, result));
+    console.log(playRound(userChoice, result));
+    console.log(playRound(userChoice, result));
+}
 
-console.log(playRound(userInput, computerSelection));
+playGame();
