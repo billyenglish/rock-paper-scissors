@@ -1,4 +1,4 @@
-let userInput = "Rock";
+let userInput = prompt("Please select Rock, Paper, or Scissors");
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
