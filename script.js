@@ -1,4 +1,5 @@
-const userChoice = prompt("Please select Rock, Paper, Scissors");
+const buttons = document.querySelectorAll('button');
+const display = document.querySelector('#result');
 
 function getComputerChoice() {  
     const randomChoice = ['rock', 'paper', 'scissors'];
@@ -11,25 +12,24 @@ function playRound(playerSelection, computerSelection) {
     let computer = computerSelection.toLowerCase();
     
     if (player === computer) {
-        return `You Tie! ${player} equals ${computer}`;
+        display.textContent = `You Tie! ${player} equals ${computer}`;
     } else if (player === 'rock' && computer === 'scissors') {
-        return `You Win! ${player} beats ${computer}`;
+        display.textContent = `You Win! ${player} beats ${computer}`;
     } else if (player === 'scissors' && computer === 'paper') {
-        return `You Win! ${player} beats ${computer}`;
+        display.textContent = `You Win! ${player} beats ${computer}`;
     } else if (player === 'paper' && computer === 'rock') {
-        return `You Win! ${player} beats ${computer}`;
+        display.textContent = `You Win! ${player} beats ${computer}`;
     } else {
-        return `You Lose! ${computer} beats ${player}`;
+        display.textContent = `You Lose! ${computer} beats ${player}`;
     }
 }
 
-function playGame() {
-    let result = getComputerChoice();
-    console.log(playRound(userChoice, result));
-    console.log(playRound(userChoice, result));
-    console.log(playRound(userChoice, result));
-    console.log(playRound(userChoice, result));
-    console.log(playRound(userChoice, result));
-}
 
-playGame();
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        let computerChoice = getComputerChoice();
+        playRound(button.id, computerChoice);
+    });
+});
+    
