@@ -1,3 +1,5 @@
+/* Logic for Rock, Paper, Scissors */
+
 function getComputerChoice() {
     let selection = ["rock", "paper", "scissors"];
     let randomChoice = selection[Math.floor(Math.random() * selection.length)];
@@ -72,6 +74,8 @@ function game() {
 }
 
 game();
+
+/* User Interface */
 
 
 
