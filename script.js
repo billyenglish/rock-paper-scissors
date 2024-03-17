@@ -73,9 +73,24 @@ function game() {
     }
 }
 
-game();
+/* Game User Interface */
 
-/* User Interface */
+const buttons = document.querySelectorAll('button');
+const computerInput = document.querySelector("#computer-selection");
+const userInput = document.querySelector("#user-selection");
+const gameResult = document.querySelector("#game-result");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        let computerSelection = getComputerChoice();
+        
+        computerInput.textContent = computerSelection;
+        userInput.textContent = button.id;
+        gameResult.textContent = playRound(button.id, computerSelection);
+    })
+});
+
+
 
 
 
