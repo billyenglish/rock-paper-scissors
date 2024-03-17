@@ -1,6 +1,7 @@
 /* Game Logic for Rock, Paper, Scissors. */
-
-let userChoice = prompt("Please select Rock, Paper, or Scissors");
+let playerScore = 0;
+let computerScore = 0;
+let gameRound = 0;
 
 function getComputerChoice() {
     let computerChoice = ["Rock", "Paper", "Scissors"];
@@ -26,8 +27,14 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function playGame() {
-    let result = getComputerChoice();
-    console.log(playRound(userChoice, result)); 
+    for (let i = 1; i < 6; i++) {
+        let userInput = prompt("Enter Rock, Paper, Scissors");
+        let computerInput = getComputerChoice();
+        let playGame = playRound(userInput, computerInput);
+        if (playGame === "WON!") {
+            console.log(playGame[i])
+        }
+    }
 }
 
 playGame();
