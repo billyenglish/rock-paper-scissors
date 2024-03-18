@@ -10,6 +10,7 @@ const computerScore = document.querySelector("#computer-score");
 let playerCount = 0;
 let computerCount = 0;
 let tieCount = 0;
+let roundCount = 0;
 
 function getComputerChoice() {
     const selection = ["rock", "paper", "scissors"];
@@ -53,16 +54,15 @@ function playGame(playerSelection, computerSelection) {
         computerCount++;
         computerScore.textContent = computerCount;
     } else {
-        tieCount++;
-        console.log(tieCount++);   
+        tieCount++;  
     }
 
     if (playerCount === 5 || computerCount === 5) {
-        gamePrompt.textContent = "Game Over";
+        gamePrompt.textContent = "Game Over!";
         if (playerCount === 5) {
-            console.log("You Win");
+            gamePrompt.textContent += ` You Win!`;
         } else {
-            console.log("Computer Wins")
+            gamePrompt.textContent += ` Computer Wins`;
         }   
         buttons.forEach((button) => {
             if (button !== resetButton) {
