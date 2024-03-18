@@ -4,6 +4,8 @@ const userSelection = document.querySelector("#user-selection");
 const computerSelection = document.querySelector("#computer-selection");
 const gamePrompt = document.querySelector("#game-prompt");
 const resetButton = document.querySelector("#reset-game");
+const userScore = document.querySelector("#user-score");
+const computerScore = document.querySelector("#computer-score");
 
 let playerCount = 0;
 let computerCount = 0;
@@ -46,10 +48,10 @@ function playGame(playerSelection, computerSelection) {
     
     if (winner == "YOU WIN") {
         playerCount++;
-        console.log("Player", playerCount);
+        userScore.textContent = playerCount;
     } else if (winner == "YOU LOSE") {
         computerCount++;
-        console.log("Computer", computerCount)
+        computerScore.textContent = computerCount;
     } else {
         tieCount++;
         console.log(tieCount++);   
@@ -74,6 +76,8 @@ function resetGame() {
     playerCount = 0;
     computerCount = 0;
     tieCount = 0;
+    userScore.textContent = 0;
+    computerScore.textContent = 0;
     gamePrompt.textContent = "";
     gameResult.textContent = "";
 
