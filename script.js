@@ -3,6 +3,8 @@ const gameResult = document.querySelector("#game-result");
 const userSelection = document.querySelector("#user-selection");
 const computerSelection = document.querySelector("#computer-selection");
 const gamePrompt = document.querySelector("#game-prompt");
+const resetButton = document.querySelector("#reset-game");
+
 let playerCount = 0;
 let computerCount = 0;
 let tieCount = 0;
@@ -57,14 +59,29 @@ function playGame(playerSelection, computerSelection) {
         gamePrompt.textContent = "Game Over";
         if (playerCount === 5) {
             console.log("You Win");
-            buttons.disable = true;
         } else {
             console.log("Computer Wins")
-        }
+        }   
         buttons.forEach((button) => {
-            button.disabled = true;
-        });        
+            if (button !== resetButton) {
+                button.disabled = true;
+            }
+        });
     }
+}
+
+function resetGame() {
+    playerCount = 0;
+    computerCount = 0;
+    tieCount = 0;
+    gamePrompt.textContent = "";
+    gameResult.textContent = "";
+
+    gameResult.textContent = "Lets Play";
+
+    buttons.forEach((button) => {
+        button.disabled = false;
+    });
 }
 
 buttons.forEach((button) => {
@@ -74,3 +91,5 @@ buttons.forEach((button) => {
         playGame(button.id, computerSelection);
     });
 });
+
+resetButton.addEventListener("click", resetGame);
