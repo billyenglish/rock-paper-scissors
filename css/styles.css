@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+/* Body Section */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    width: 100%;
+    background-color: #DC7633;
+}
+
+/* Header Section */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem 0rem 3.5rem 0rem;
+    background-color: #121212;
+    width: inherit;
+    color: #DC7633;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+/* Main Section */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0rem 3rem 0rem;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 500;
+    padding: 4rem 0rem 3rem 0rem;
+}
+
+.selection {
+    text-transform: capitalize;
+}
+
+.score-display {
+    display: flex;
+    gap: 5rem;
+    padding: 3rem 0rem 3rem 0;
+}
+
+.score-display h3 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+#player-score, #computer-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding-top: 1.5rem;
+}
+
+#game-controls {
+    padding: 1rem 0rem 3rem 0rem;
+}
+
+#game-controls button {
+    font-size: 3rem;
+    padding: 1rem 2rem;
+    margin: 0rem 1rem;
+}
+
+.reset-game {
+   z-index: 1001;
+   position: absolute;
+   border: 1px solid black;
+   background-color: #121212;
+   color: #DC7633;
+   min-width: 300px;
+   min-height: 200px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border-radius: 1rem;
+   opacity: .9;
+   display: none;
+}
+
+.reset-game p {
+    font-size: 1.75rem;
+    font-weight: 500;
+    padding: 2rem 0rem 2rem 0rem;
+    text-align: center;
+}
+
+.reset-game button {
+    background-color: #DC7633;
+    display: flex;
+    margin: 0 auto;
+}
+
+button {
+    font-size: 1.25rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Footer Section */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: auto 0 auto 0;
+    background-color: #121212;
+    width: inherit;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    height: 100px;
+}
+
+footer p {
+    font-size: 1.2rem;
+    color: #DC7633;
+    letter-spacing: 2px;
+}
