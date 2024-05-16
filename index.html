@@ -3,38 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Play Rock, Paper, Scissors</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./css/reset.css" type="text/css">
+    <link rel="stylesheet" href="./css//styles.css" type="text/css">
+    <script src="https://kit.fontawesome.com/9c98ae8183.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Let's Play Rock, Paper, Scissors!</h1>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <main>
+        <h2 id="game-result">Let's Play</h2>
 
-    <div id="game-result">Lets Play</div>
-    
-    <div id="game-prompt"></div>
-
-    <div id="scores">
-        <div id="user-selection">
-            <h3>User Score</h3>
-            <span id="user-score">0</span>
+        <div class="score-display">
+            <div>
+                <h3>Player Score</h3>
+                <span id="player-score">0</span>
+            </div>
+            <div>
+                <h3>Computer Score</h3>
+                <span id="computer-score">0</span>
+            </div>
         </div>
-        <div id="computer-selection">
-            <h3>Computer Score</h3>
-            <span id="computer-score">0</span>
+
+        <div id="game-controls">
+            <button id="rock">
+                <i class="fas fa-hand-rock"></i>
+            </button>
+            <button id="paper">
+                <i class="fas fa-hand-paper"></i>
+            </button>
+            <button id="scissors">
+                <i class="fas fa-hand-scissors"></i>
+            </button>
         </div>
-    </div>
-
-    <div class="game-options">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-    </div>
-
-    <button id="reset-game">Play Again</button>
-    
-    <script src="./script.js"></script>
+        <div class="reset-game">
+            <p>Play Again!</p>
+            <button id="reset" type="reset">
+                Reset
+            </button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Copyright Billy English</p>
+    </footer>
+    <script src="./js/script.js"></script>
 </body>
 </html>
