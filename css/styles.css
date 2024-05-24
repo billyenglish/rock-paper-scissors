@@ -1,149 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
+html, body {
     height: 100%;
-    width: 100%;
 }
 
 /* Body Section */
 
 body {
+    font-family: Cambay, Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    width: 100%;
-    background-color: #DC7633;
 }
 
 /* Header Section */
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3.5rem 0rem 3.5rem 0rem;
-    background-color: #121212;
-    width: inherit;
-    color: #DC7633;
+    padding: 3rem;
+    background-color: #333;
+    width: 100%;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: 5px;
+    font-size: 2.7rem;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: .65rem;
+    text-align: center;
+    color: #C15717;
 }
 
 /* Main Section */
 
 main {
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 2rem 0rem 3rem 0rem;
 }
 
-main h2 {
-    text-align: center;
-    font-size: 2.25rem;
-    font-weight: 500;
-    padding: 4rem 0rem 3rem 0rem;
-}
-
-.selection {
-    text-transform: capitalize;
-}
-
-.score-display {
+#game-display {
+    padding: 2rem 0 4rem 0;
     display: flex;
-    gap: 5rem;
-    padding: 3rem 0rem 3rem 0;
+    justify-content: center;
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: .4rem;
 }
 
-.score-display h3 {
+#game-scoreboard {
+    display: flex;
+    gap: 10rem;
+    padding: 2rem 0;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#player-name, #computer-name {
     font-size: 2rem;
+    font-weight: 900;
     padding-bottom: 1rem;
+    letter-spacing: .3rem;
 }
 
 #player-score, #computer-score {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    padding-top: 1.5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #C15717;
 }
 
 #game-controls {
-    padding: 1rem 0rem 3rem 0rem;
-}
-
-#game-controls button {
-    font-size: 3rem;
-    padding: 1rem 2rem;
-    margin: 0rem 1rem;
-}
-
-.reset-game {
-   z-index: 1001;
-   position: absolute;
-   border: 1px solid black;
-   background-color: #121212;
-   color: #DC7633;
-   min-width: 300px;
-   min-height: 200px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   border-radius: 1rem;
-   opacity: .9;
-   display: none;
-}
-
-.reset-game p {
-    font-size: 1.75rem;
-    font-weight: 500;
-    padding: 2rem 0rem 2rem 0rem;
-    text-align: center;
-}
-
-.reset-game button {
-    background-color: #DC7633;
     display: flex;
-    margin: 0 auto;
+    gap: 1rem;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0 2rem 0;
+}
+
+#game-controls i {
+    font-size: 5rem;
+    padding: 10px;
 }
 
 button {
     font-size: 1.25rem;
-    padding: 10px;
+    font-weight: 500;
+    padding: .75rem 1.75rem;
+    border: none;
     border-radius: 5px;
+    background-color: #333;
+    color: #C15717;
+    cursor: pointer;
+}
+
+.game-result {
+    visibility: hidden;
+    position: absolute;
+    border: 4px solid #C15717;
+    padding: 5rem 7rem;
+    background-color: #333;
+    opacity: .95;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.game-result h4 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #C15717;
+    padding-bottom: 3rem;
+}
+
+#reset {
+    background-color: #C15717;
+    color: #333;
 }
 
 /* Footer Section */
 
 footer {
+    background-color: #333;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: auto 0 auto 0;
-    background-color: #121212;
-    width: inherit;
-    bottom: 0;
-    left: 0;
     position: fixed;
-    height: 100px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 2rem 0;
+    color: #C15717;
+
 }
 
 footer p {
-    font-size: 1.2rem;
-    color: #DC7633;
-    letter-spacing: 2px;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+footer i {
+    font-size: 1.75rem;
+    padding: 0 5px;
 }
