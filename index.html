@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cambay:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/reset.css" type="text/css">
-    <link rel="stylesheet" href="./css//styles.css" type="text/css">
+    <link rel="stylesheet" href="./css/styles.css" type="text/css">
     <script src="https://kit.fontawesome.com/9c98ae8183.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -13,39 +16,31 @@
         <h1>Rock Paper Scissors</h1>
     </header>
     <main>
-        <h2 id="game-result">Let's Play</h2>
+        <h2 id="game-display">Let's Play!</h2>
 
-        <div class="score-display">
-            <div>
-                <h3>Player Score</h3>
-                <span id="player-score">0</span>
+        <div id="game-scoreboard">
+            <div class="score">
+                <h3 id="player-name">Player</h3>
+                <p><span id="player-score">0</span></p>
             </div>
-            <div>
-                <h3>Computer Score</h3>
-                <span id="computer-score">0</span>
+            <div class="score">
+                <h3 id="computer-name">Computer</h3>
+                <p><span id="computer-score">0</span></p>
             </div>
         </div>
-
         <div id="game-controls">
-            <button id="rock">
-                <i class="fas fa-hand-rock"></i>
-            </button>
-            <button id="paper">
-                <i class="fas fa-hand-paper"></i>
-            </button>
-            <button id="scissors">
-                <i class="fas fa-hand-scissors"></i>
-            </button>
+            <button data-choice="rock" type="button"><i class="fas fa-hand-rock" aria-hidden="true"></i></button>
+            <button data-choice="paper" type="button"><i class="fas fa-hand-paper" aria-hidden="true"></i></button>
+            <button data-choice="scissors" type="button"><i class="fas fa-hand-scissors" aria-hidden="true"></i></button>
         </div>
-        <div class="reset-game">
-            <p>Play Again!</p>
-            <button id="reset" type="reset">
-                Reset
-            </button>
+
+        <div class="game-result">
+            <h4 id="game-winner">Player Wins</h4>
+            <button id="reset" type="reset">Ok</button>
         </div>
     </main>
     <footer>
-        <p>&copy; Copyright Billy English</p>
+        <p>Copyright &copy; <span id="year">2024</span> Billy English <i class="fa-brands fa-github"></i></p>
     </footer>
     <script src="./js/script.js"></script>
 </body>
